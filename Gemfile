@@ -7,7 +7,6 @@ end
 
 
 gem 'rails', '~> 5.1.6'
-gem 'sqlite3'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'simple_form', '~> 4.0'
@@ -27,6 +26,15 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+end
+
+group :development do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
