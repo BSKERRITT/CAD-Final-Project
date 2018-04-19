@@ -1,0 +1,29 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="col-md-6">
+    <div class="surrounding-box">
+      <h2><%= @patient.name %> <%= @patient.surname %></h2>
+      <p><%= @patient.address %></p>
+      <%= link_to "Back", root_path, class: "btn btn-primary" %>
+      <%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary" %>
+      <%= link_to "Delete", patient_path(@patient), class: "btn btn-primary", method: :delete, data: { confirm: "Are You Sure?" } %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="surrounding-box">
+      <h2>Records</h2>
+      <% @patient.records.each do |record| %>
+        <div class="record-box">        
+          <div class="record-title">
+            <h5><strong>Created At: <%= record.created_at %></strong></h5>
+          </div>
+          <div class="show-record-btn">
+            <%= link_to "Show Record", patient_record_path(@patient), class: "btn btn-primary pull-right" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="add-record-btn">
+      <%= link_to "Add Record", new_patient_record_path(@patient), class: "btn btn-primary btn-success" %>
+    </div>
+  </div>
+</div>

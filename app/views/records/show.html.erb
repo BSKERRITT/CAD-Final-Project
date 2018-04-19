@@ -1,0 +1,14 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="surrounding-box">
+    <h3>Observations:</h3><br>
+    <p><%= @record.observation %></p><br>
+    <h3>Previous Conditions:</h3><br>
+    <p><%= @record.previous_condition %></p><br>
+    <h3>Blood Test: </h3>
+    <p><%= @record.blood_test %></p><br>
+    <h3>Sick Note: </h3>
+    <p><%= @record.sick_note %></p>
+    <%= link_to "Back", patient_path, class: "btn btn-primary" %>
+    <%= link_to "Delete", patient_path(@record), class: "btn btn-primary", method: :delete, data: { confirm: "Are You Sure?" } %>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  observation: MyText
+  previous_condition: MyText
+  blood_test: false
+  sick_note: false
+  patient: one
+
+two:
+  observation: MyText
+  previous_condition: MyText
+  blood_test: false
+  sick_note: false
+  patient: two

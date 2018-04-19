@@ -1,0 +1,27 @@
+// Place all the styles related to the Records controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.record-box {
+  height: 60px;
+  background-color: #9FFF84;
+  border-style: solid;
+  border-width: medium;
+  border-color: #aaccff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding-right: 10px;
+}
+
+.record-title {
+  width: 80%;
+  float: left;
+  padding-top: 10px;
+  padding-left: 15px;
+}
+
+.show-record-btn {
+  width: 20%;
+  float: left;
+  padding-top: 10px;
+}

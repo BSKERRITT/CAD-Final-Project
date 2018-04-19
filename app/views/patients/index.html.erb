@@ -1,0 +1,19 @@
+<% if user_signed_in? %>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="surrounding-box">
+      <h2>Your Most Recent Patients</h2>
+        <% @patients.each do |patient| %>
+          <div class="patient-box">
+            <div class="patient-name">
+                <h3><%= patient.name %> <%= patient.surname %></h3>
+            </div>
+            <div class="patient-details-btn">
+                <%= link_to "Patient Details", patient, class: "btn btn-primary pull-right" %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+<% else %>
+  <%= render 'layouts/landing_page' %>
+<% end %>

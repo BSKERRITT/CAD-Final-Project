@@ -9,6 +9,35 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+      <div class="container">
+        <div class="navbar-header">
+          <% if current_user.present? %>
+            <%= link_to "Patients", root_path, class: "navbar-brand" %>
+          <% else %>
+            <%= link_to "Smart Health Care System", root_path, class: "navbar-brand" %>
+          <% end %>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+          <% if current_user.present? %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Log In", new_user_session_path %></li>
+          <% end %>
+        </ul>
+        <% if user_signed_in? %>
+          <%= link_to "Add New Patient", new_patient_path, class: "btn btn-success navbar-text navbar-link navbar-right" %>
+          <%= link_to "Add New Appointment", new_patient_path, class: "btn btn-primary navbar-text navbar-link navbar-right" %>
+        <% end %>
+      </div>
+    </nav>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
     <%= yield %>
+
   </body>
 </html>

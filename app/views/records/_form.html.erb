@@ -1,0 +1,7 @@
+<%= simple_form_for [@patient, @patient.records.build] do |f| %>
+  <%= f.input :observation, label: "Observation" %>
+  <%= f.input :previous_condition, label: "Previous Conditions" %>
+  <%= f.input :blood_test, label: "Blood Test" %>
+  <%= f.input :sick_note, label: "Sick Note" %>
+  <%= f.button :submit %>
+<% end %>
