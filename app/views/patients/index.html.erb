@@ -1,6 +1,12 @@
 <% if user_signed_in? %>
   <div class="col-md-6 col-md-offset-3">
     <div class="surrounding-box">
+      <div class="search">
+        <%= form_tag patients_path, :method => 'get' do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Patients", class: 'form-control' %><br>
+          <%= submit_tag 'Search', class: "btn btn-primary pull-right" %>
+        <% end %>
+      </div>
       <h2>Your Most Recent Patients</h2>
         <% @patients.each do |patient| %>
           <div class="patient-box">

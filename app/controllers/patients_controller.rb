@@ -4,6 +4,7 @@ class PatientsController < ApplicationController
   def index
     if user_signed_in?
       @patients = Patient.where(:user_id => current_user.id).order("created_at DESC")
+      @patients = Patient.search(params[:search])
     end
   end
 
