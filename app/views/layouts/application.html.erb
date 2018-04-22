@@ -29,7 +29,6 @@
         </ul>
         <% if user_signed_in? %>
           <%= link_to "Add New Patient", new_patient_path, class: "btn btn-success navbar-text navbar-link navbar-right" %>
-          <%= link_to "Add New Appointment", new_patient_path, class: "btn btn-primary navbar-text navbar-link navbar-right" %>
         <% end %>
       </div>
     </nav>
@@ -38,6 +37,7 @@
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
 
   </body>
 </html>

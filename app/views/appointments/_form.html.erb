@@ -1,4 +1,4 @@
-<%= simple_form_for [@patient, @patient.appointments.build] do |f| %>
+<%= simple_form_for @patient.appointments do |f| %>
   <%= f.input :date, label: "Date" %>
   <%= f.input :time, label: "Time" %>
   <%= f.input :doctor, label: "Doctor" %>

@@ -65,8 +65,11 @@
   margin-top: 10px;
 }
 
-.footer {
+.top-footer-box {
+  position: fixed;
+  margin-top: 20px;
   width: 100%;
   height: 100px;
-  background-color: #850016;
+  background-color: #aaccff;
+  bottom: 0;
 }

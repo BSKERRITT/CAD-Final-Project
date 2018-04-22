@@ -1,18 +1,28 @@
 <div class="col-md-10 col-md-offset-1">
   <div class="col-md-6">
     <div class="surrounding-box">
-      <h2><%= @patient.name %> <%= @patient.surname %></h2>
+      <h2><strong><%= @patient.name %> <%= @patient.surname %></strong></h2>
+      <h4><strong>Address:</strong></h4>
       <p><%= @patient.address %></p>
+      <h4><strong>Date of Birth:</strong></h4>
+      <p><%= @patient.date_of_birth %></p>
+      <h4><strong>Phone Number:</strong></h4>
+      <p><%= @patient.phone_no %></p>
+      <h4><strong>Medical Card:</strong></h4>
+      <p><%= @patient.medical_card %></p>
+      <h4><strong>Medical Insurance:</strong></h4>
+      <p><%= @patient.medical_insurance %></p>
       <%= link_to "Back", root_path, class: "btn btn-primary" %>
       <%= link_to "Edit", edit_patient_path(@patient), class: "btn btn-primary" %>
       <%= link_to "Delete", patient_path(@patient), class: "btn btn-primary", method: :delete, data: { confirm: "Are You Sure?" } %>
+      <%= link_to "Add New Appointment", new_patient_path, class: "btn btn-primary pull-right" %>
     </div>
   </div>
   <div class="col-md-6">
     <div class="surrounding-box">
       <h2>Records</h2>
-      <% @patient.records.each do |record| %>
-        <div class="record-box">        
+      <% @patient.records[0,4].reverse_each do |record| %>
+        <div class="record-box">
           <div class="record-title">
             <h5><strong>Created At: <%= record.created_at %></strong></h5>
           </div>

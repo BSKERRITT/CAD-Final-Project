@@ -10,13 +10,13 @@ class RecordsController < ApplicationController
 
   def new
     @patient = Patient.find(params[:patient_id])
-    @record = Record.new(record_params)
+    @record = Record.new
   end
 
   def create
     @patient = Patient.find(params[:patient_id])
     @record = @patient.records.create(record_params)
-    
+
     if @record.save
       redirect_to patient_path(@patient)
     else

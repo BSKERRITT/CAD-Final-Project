@@ -17,6 +17,7 @@ class PatientsController < ApplicationController
   def create
     @patient = current_user.patients.build(patient_params)
     if @patient.save
+      flash[:notice] = "Patient was successfully created."
       redirect_to root_path
     else
       render 'new'
@@ -41,7 +42,7 @@ class PatientsController < ApplicationController
 
   private
     def patient_params
-      params.require(:patient).permit(:name, :surname, :address)
+      params.require(:patient).permit(:name, :surname, :address, :date_of_birth, :phone_no, :medical_card, :medical_insurance)
     end
 
     def find_patient
